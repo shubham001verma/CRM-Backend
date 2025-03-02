@@ -170,3 +170,16 @@ exports.deleteSalary = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+exports.getSalaryByTeamId = async (req, res) => {
+
+  try {
+      const id = req.params.id;
+      const salary = await Salary.find({teamMember:id}).populate('teamMember')
+      if (!salary) {
+          return res.status(404).json({ message: 'salary not found' });
+      }
+      res.status(200).json(salary);
+  } catch (error) {
+      res.status(500).json({ message: 'Error fetching salary', error: error.message });
+  }
+};
