@@ -14,4 +14,5 @@ router.delete('/delete/:salaryId', salaryController.deleteSalary);
 
 
 router.get("/salarybyuserid/:userId", salaryController.getSalaryByUserId);
+router.get("/getsalarybyteamid/:id",salaryController.getSalaryByTeamId);
 module.exports = router;
