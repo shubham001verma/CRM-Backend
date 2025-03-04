@@ -75,7 +75,7 @@ app.use('/report', reportRoutes);  // Add this line after all other routes
 
 
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('API is running...');
 });
 
